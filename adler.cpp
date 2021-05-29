@@ -6,9 +6,9 @@ unsigned int adler_32::checkTheCode(string text, unsigned int code)
     unsigned int myCode;
     myCode=x.setTheFileNameAndGenerateCode(text);
     if(myCode == code) {
-        cout<<"ok"<<endl;
+        cout<<"Этот код верный: ";
     } else {
-        cout<<"not ok"<<endl;
+        cout<<"Этот код неверный: ";
     }
     //code=0;
     return code;
