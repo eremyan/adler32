@@ -3,15 +3,16 @@
 #include <iostream>
 #include <cctype>
 #include <string>
+#include <iomanip>
 using namespace std;
 int main(int argc, char **argv)
 {
     adler_32 y;
-    cout<<"ADLER_32"<<endl;
+    cout<<setw(70)<<"ADLER_32"<<endl;
     string text;
     unsigned op;
     do {
-        cout<<"Выбирайте, что будет делать ваш покорный слуга (0-выход, 1-проверить, 2-сгенерировать и задать имя файла): ";
+        cout<<"Выберите действие (0-выход, 1-проверить, 2-сгенерировать): ";
         cin>>op;
         if (op>0 && op<=2) {
             cout<<"Вводите текст: ";
@@ -19,10 +20,10 @@ int main(int argc, char **argv)
             if (op==1) {
                 unsigned int code;
                 cout<<"Введите код:";
-                cin>>code;
-                cout<<"Проверенный код: "<<y.checkTheCode(text,code)<<endl;
+                cin>>hex>>code;
+                cout<<"Верное значение: "<<y.checkTheCode(text,code)<<endl;
             } else if (op==2) {
-                cout<<"Сгенерированный код и имя файла:";
+                cout<<"Сгенерированный код:";
                 y.setTheFileNameAndGenerateCode(text);
             }
         }
