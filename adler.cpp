@@ -10,7 +10,6 @@ unsigned int adler_32::checkTheCode(string text, unsigned int code)
     } else {
         cout<<"Этот код неверный: ";
     }
-    //code=0;
     return code;
 }
 
