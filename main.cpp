@@ -1,4 +1,5 @@
 #include "adler.h"
+#include "Help.h"
 #include <cstring>
 #include <iostream>
 #include <cctype>
@@ -7,11 +8,13 @@
 using namespace std;
 int main(int argc, char **argv)
 {
+    help a;
+    a.Helping(); 
     adler_32 y;
-    cout<<setw(70)<<"ADLER_32"<<endl;
     string text;
     unsigned op;
     do {
+
         cout<<"Выберите действие (0-выход, 1-проверить, 2-сгенерировать): ";
         cin>>op;
         if (op>0 && op<=2) {
